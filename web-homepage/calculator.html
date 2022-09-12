@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <title>Calculadora</title>
+        <link href="styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+
+
+
+    <body>
+        <div id="paidacalculadora">
+
+
+            <div class="calcesquerda">
+                <div class="textocalculadora w3-container  w3-animate-right">
+                    <h1>This is Calc50</h1>
+                    <hr>
+                    <br>
+                    <br>
+                    <h5>click C to see the an animation made with CSS only</h5>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <a href="index.html"><svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M6.104 2.396a.5.5 0 0 1 0 .708L3.457 5.75l2.647 2.646a.5.5 0 1 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
+  <path fill-rule="evenodd" d="M2.75 5.75a.5.5 0 0 1 .5-.5h6.5a2.5 2.5 0 0 1 2.5 2.5v5.5a.5.5 0 0 1-1 0v-5.5a1.5 1.5 0 0 0-1.5-1.5h-6.5a.5.5 0 0 1-.5-.5z"/>
+</svg></a>
+                </div><!--textocalculadora-->
+                <div class="botaocalculadora w3-container  w3-animate-left">
+                    <input type="hidden" class="btones" value="Change">
+                </div>
+            </div>
+            <div class="maincalc">
+
+            <div id="calculadora" >
+                <form>
+                    <input class="textview" id="textview">
+                </form>
+                <table class="tablecalc">
+                    <tr>
+                        <td><input class="button" type="button" onClick="clean()" value="C"/></td>
+                        <td><input class="button" type="button" onClick="insert('/')" value="/"/></td>
+                        <td><input class="button" type="button" onClick="insert('*')" value="x"/></td>
+                        <td><input class="button" type="button" onClick="insert('-')" value="-"/></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" onClick="insert(7)" value="7"/></td>
+                        <td><input class="button" type="button" onClick="insert(8)" value="8"/></td>
+                        <td><input class="button" type="button" onClick="insert(9)" value="9"/></td>
+                        <td><input class="button" type="button" onClick="insert('+')" value="+"/></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button"type="button"  onClick="insert(4)" value="4"/></td>
+                        <td><input class="button" type="button" onClick="insert(5)" value="5"/></td>
+                        <td><input class="button" type="button" onClick="insert(6)" value="6"/></td>
+                        <td><input class="button" type="button" onClick="insert('.')" value="."/></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" onClick="insert(1)" value="1"/></td>
+                        <td><input class="button" type="button" onClick="insert(2)" value="2"/></td>
+                        <td><input class="button" type="button" onClick="insert(3)" value="3" /></td>
+                        <td><input class="button" type="button" onClick="del()" value="Del"/></td>
+                    </tr>
+
+                </table>
+                <table class="utimacalc">
+                    <tr>
+                        <td><input class="buttonzero" type="button" onClick="insert(0)" value="0"/></td>
+                        <td><input class="buttonzero" type="button" onClick="equal()" value="Enter"/></td>
+
+                    </tr>
+                </table>
+
+
+
+            </div><!--Calculadora-->
+
+            </div><!--maincalc-->
+        </div><!--paidacalculadora-->
+        <script>
+
+            const sleep = (milliseconds) => {
+            return new Promise(resolve => setTimeout(resolve, milliseconds))
+            }
+
+            function insert(num){
+                document.getElementById('textview').value = document.getElementById('textview').value+num;
+            }
+
+
+            function equal(){
+                document.getElementById('textview').value = eval(document.getElementById('textview').value);
+            }
+            function clean(){
+                document.getElementById('textview').value = "";
+                sleep(40).then(() => {
+                    document.getElementById('calculadora').style.background= "linear-gradient( to right, rgba(255,255,255,0.1), rgba(0,0,0,0)";
+                })
+                sleep(60).then(() => {
+                    document.getElementById('calculadora').style.background= "linear-gradient( to right, rgba(255,255,255,0.2), rgba(0,0,0,0)";
+                })
+                sleep(120).then(() => {
+                    document.getElementById('calculadora').style.background= "linear-gradient( to right, rgba(255,255,255,0.3), rgba(255,255,255,0.1)";
+                })
+                sleep(180).then(() => {
+                    document.getElementById('calculadora').style.background= "linear-gradient(to right,  rgba(255,255,255,0.5), rgba(255,255,255,0.3)";
+                })
+                sleep(240).then(() => {
+                    document.getElementById('calculadora').style.background= "linear-gradient( to right, rgba(255,255,255,0.7), rgba(255,255,255,0.5)";
+                })
+                sleep(300).then(() => {
+                    document.getElementById('calculadora').style.background= "linear-gradient( to right, rgba(255,255,255,0.9), rgba(255,255,255,0.7)";
+                })
+                sleep(360).then(() => {
+                    document.getElementById('calculadora').style.background= "linear-gradient(to right,  rgba(255,255,255,0.7), rgba(255,255,255,0.9)";
+                })
+                sleep(420).then(() => {
+                    document.getElementById('calculadora').style.background= "linear-gradient(to right,  rgba(255,255,255,0.5), rgba(255,255,255,0.7)";
+                })
+                sleep(480).then(() => {
+                    document.getElementById('calculadora').style.background= "linear-gradient(to right,  rgba(255,255,255,0.3), rgba(255,255,255,0.5)";
+                })
+                sleep(540).then(() => {
+                    document.getElementById('calculadora').style.background= "linear-gradient(to right,  rgba(255,255,255,0.1), rgba(255,255,255,0.3)";
+                })
+                sleep(600).then(() => {
+                    document.getElementById('calculadora').style.background= "linear-gradient(to right,  rgba(255,255,255,0.0), rgba(255,255,255,0.1)";
+                })
+
+
+            }
+            function del(){
+                var back = document.getElementById('textview').value;
+                back.replace(back.lenght-1,"")
+            }
+
+
+            function press(e){
+                if (e == 13){
+                    return equal();
+
+                }else if (e==8){
+                    return del();
+                }
+            }
+
+
+        </script>
+    </body>
+</html>
