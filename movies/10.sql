@@ -1,0 +1,1 @@
+SELECT "name" FROM "directors" JOIN "people" ON "person_id"="id" WHERE "movie_id" IN(SELECT "movie_id" FROM "movies" JOIN "ratings" ON "id"="movie_id" WHERE "rating">="9.0") GROUP BY "name"

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html id="p">
+<head>
+<title>{{ name }} - Curriculum </title>
+
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="The Curriculum {{ name }}"/>
+<meta charset="UTF-8">
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+
+<link type="text/css" rel="stylesheet" href="/static/style.css">
+
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body id="top" >
+<div id="capture">
+
+<div id="cv" class="instaFade">
+	<div class="mainDetails">
+		<div id="headshot" class="quickFade">
+
+		</div>
+
+		<div id="name">
+			<h1 id="capture" class="quickFade delayTwo">{{ name }}</h1>
+			<h2 class="quickFade delayThree">{{ job }}</h2>
+		</div>
+
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+				<li>{{ nacionalidade }}, {{ age }} anos</li>
+				<li>{{ city }}</li>
+				<li>{{ phone }}</li>
+				<li><a href="{{ email }}" target="_blank">{{ email }}</a></li>
+				<li><a href="{{ linkedin }}">{{ linkedin }}</a></li>
+
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+	<div id="mainArea" class="quickFade delayFive">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Objetivo</h1>
+				</div>
+
+				<div class="sectionContent">
+					<p>{{ objetivo }}</p>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+
+
+		<section>
+			<div class="sectionTitle" >
+				<h1>Experiência Profissional</h1>
+			</div>
+
+			<div class="sectionContent">
+				{% for i in experiencias %}
+				<article>
+					<h2>{{ i["cargo"] }},  {{ i["company"] }}</h2>
+					<p class="subDetails">{{ i["start"] }}, {{ i["end"] }}</p>
+					<p>{{ i["description"] }}</p>
+				</article>
+				{% endfor %}
+
+
+			</div>
+			<div class="clear"></div>
+		</section>
+
+
+		<section>
+			<div class="sectionTitle">
+				<h1>Habilidades</h1>
+			</div>
+
+			<div class="sectionContent">
+				<ul class="keySkills">
+					<li>{{ skill }}</li>
+					<li>{{ skill1 }}</li>
+					<li>{{ skill2 }}</li>
+					<li>{{ skill3 }}</li>
+					<li>{{ skill4 }}</li>
+					<li>{{ skill5 }}</li>
+					<li>{{ skill6 }}</li>
+					<li>{{ skill7 }}</li>
+					<li>{{ skill8 }}</li>
+					<li>{{ skill9 }}</li>
+
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</section>
+
+
+		<section>
+			<div class="sectionTitle">
+				<h1>Educação</h1>
+			</div>
+
+			<div class="sectionContent">
+				{% for i in universitys %}
+				<article>
+					<h2>{{ i["university"] }}</h2>
+					<p class="subDetails">{{ i["degree"] }}</p>
+					<p>{{ i["desc"] }}</p>
+				</article>
+				{% endfor %}
+
+
+			</div>
+			<div class="clear"></div>
+		</section>
+
+	</div>
+</div>
+
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3753241-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+<script>
+
+</script>
+
+</body>
+</html>

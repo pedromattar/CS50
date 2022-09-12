@@ -1,0 +1,2 @@
+SELECT "name" FROM "people" JOIN "stars" ON "id"="person_id" WHERE "person_id" IN
+(SELECT "person_id" FROM "stars" JOIN "movies" ON "movie_id"="id" WHERE "year"="2004") GROUP BY "name" ORDER BY "birth"
